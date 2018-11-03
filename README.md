@@ -37,9 +37,9 @@ AC Bikeshare will implement more functionality that provides a richer experience
 
 ## Try it out
 
-  - acbikeshare.com
+  - https://acbikeshare.com
   - https://github.com/shukryzablah/bikeshare
-  - bikeshare-hackholyoke2018.herokuapp.com
+  - https://bikeshare-hackholyoke2018.herokuapp.com
 
 ## Team
 
