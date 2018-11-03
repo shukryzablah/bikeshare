@@ -1,0 +1,26 @@
+.card {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.card_content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.card_content-icon {
+
+}
+
+.card_content-title {
+
+}
+
+.card_actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card_actions-child {
+
+}

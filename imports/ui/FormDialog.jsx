@@ -10,6 +10,7 @@
 
   import Bikes from '../api/bikes';
   import Patrons from '../api/patrons';
+  import History from '../api/history';
 
   class FormDialog extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@
 
       this.state = {
         open: false,
+        input: "",
       };
     }
   
@@ -28,16 +30,30 @@
       this.setState({ open: false });
     };
 
+    handleInputChange = (event) => {
+      this.setState({
+        input: event.target.value,
+      })
+    }
+
     doUpdateBike = () => {
       let newPatron;
       if(this.props.newStatus === "Checked out") {
-        newPatron = "John Smith";
+        newPatron = this.state.input;
       } else {
         newPatron = "NONE";
       }
       Bikes.update(this.props.id, {
 
         $set: { status: this.props.newStatus , patron: newPatron },
+  
+      }); 
+
+      History.insert({
+        id: this.props.id,
+        action: this.props.action,
+        newPatron: newPatron,
+        createdAt: new Date(), // current time
   
       });
     }
@@ -48,6 +64,10 @@
     }
   
     render() {
+
+      let message = this.props.action === "check out"
+       ? `Swipe the patron's id to ${this.props.action} a bike.`
+       : `Are you sure?`;
 
       return (
         <div>
@@ -60,14 +80,15 @@
             <DialogTitle id="form-dialog-title">{this.props.action}</DialogTitle>
             <DialogContent>
               <DialogContentText>
-                Swipe the patron's id to {this.props.action} a bike.
+                {message}
               </DialogContentText>
-              <TextField
+              {this.props.action === "check out" && <TextField
                 id="standard-with-placeholder"
                 label="Input Patron ID"
                 placeholder="210212300292668"
+                onChange={this.handleInputChange}
                 margin="normal"
-              />
+              />}
             </DialogContent>
             <DialogActions>
               <Button onClick={this.handleClose} color="primary">

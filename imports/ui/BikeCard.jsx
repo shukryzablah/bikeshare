@@ -29,17 +29,19 @@ class BikeCard extends Component {
 
   render() {
     return (
-      <Card>
-        <CardContent>
-          <Typography variant="h5" component="h2">
+      <Card className="card">
+        <CardContent className="card_content">
+          <div className="card_content-icon">
+            {this.getIcon(this.props.status)}
+          </div>
+          <Typography variant="h5" component="h2" className="card_content-title">
             {this.props.name}
           </Typography>
-          {this.getIcon(this.props.status)}
         </CardContent>
-        <CardActions>
-          <FormDialog id={this.props.id} action="check out" newStatus="Checked out"/>
-          <FormDialog id={this.props.id} action="check in" newStatus="Available"/>
-          <FormDialog id={this.props.id} action="withdraw" newStatus="Broken"/>
+        <CardActions className="card_actions">
+          <FormDialog id={this.props.id} action="check out" newStatus="Checked out" className="card_actions-child"/>
+          <FormDialog id={this.props.id} action="check in" newStatus="Available" className="card_actions-child"/>
+          <FormDialog id={this.props.id} action="withdraw" newStatus="Broken" className="card_actions-child"/>
         </CardActions>
       </Card>
     );

@@ -14,7 +14,6 @@ class BikeAppBar extends Component {
             <Typography variant="title" color="inherit">
               AC BikeShare
             </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
       </div>
