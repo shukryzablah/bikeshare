@@ -41,3 +41,10 @@ AC Bikeshare will implement more functionality that provides a richer experience
   - https://github.com/shukryzablah/bikeshare
   - bikeshare-hackholyoke2018.herokuapp.com
 
+## Team
+
+**Shukry Zablah** is a junior studying computer science and statistics at Amherst College.
+
+**Yusrah Kaudeer** is a sophomore studying chemistry and mathematics at Amherst College.
+
+This is our first hackathon experience.
