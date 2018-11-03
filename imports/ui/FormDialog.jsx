@@ -12,9 +12,13 @@
   import Patrons from '../api/patrons';
 
   class FormDialog extends Component {
-    state = {
-      open: false,
-    };
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        open: false,
+      };
+    }
   
     handleClickOpen = () => {
       this.setState({ open: true });
@@ -24,17 +28,26 @@
       this.setState({ open: false });
     };
 
-    doUpdateBike = (newStatus) => {
-      Bikes.update(this.props.task._id, {
+    doUpdateBike = () => {
+      let newPatron;
+      if(this.props.newStatus === "Checked out") {
+        newPatron = "John Smith";
+      } else {
+        newPatron = "NONE";
+      }
+      Bikes.update(this.props.id, {
 
-        $set: { checked: !this.props.task.checked },
+        $set: { status: this.props.newStatus , patron: newPatron },
   
       });
     }
+
+    updateAndClose = () => {
+      this.doUpdateBike();
+      this.handleClose();
+    }
   
     render() {
-
-      const actionFun = this.handleClose
 
       return (
         <div>
@@ -60,7 +73,7 @@
               <Button onClick={this.handleClose} color="primary">
                 Cancel
               </Button>
-              <Button onClick={this.handleClose} color="primary">
+              <Button onClick={this.updateAndClose} color="primary">
                 {this.props.action}
               </Button>
             </DialogActions>

@@ -7,7 +7,7 @@ class BikeCardList extends Component {
 
   renderBikes = () => {
     return this.props.bikes.map((bike => {
-      return <BikeCard key={bike._id} name = {bike.name} status = {bike.status}/>
+      return <BikeCard key={bike._id} id={bike._id} name = {bike.name} status = {bike.status} patron = {bike.patron}/>
     }));
   }
 

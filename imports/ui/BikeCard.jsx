@@ -17,12 +17,12 @@ class BikeCard extends Component {
     super(props);
   }
 
-  getIcon = (icon) => {
-    if(icon === "Available") {
+  getIcon = (status) => {
+    if(status === "Available") {
       return <DirectionsBike/>
-    } else if(icon === "Broken") {
+    } else if(status === "Broken") {
       return <Warning/>
-    } else if(icon === "Checked out") {
+    } else if(status === "Checked out") {
       return <Block/>
     }
   }
@@ -37,9 +37,9 @@ class BikeCard extends Component {
           {this.getIcon(this.props.status)}
         </CardContent>
         <CardActions>
-          <FormDialog action="check out"/>
-          <FormDialog action="check in"/>
-          <FormDialog action="withdraw"/>
+          <FormDialog id={this.props.id} action="check out" newStatus="Checked out"/>
+          <FormDialog id={this.props.id} action="check in" newStatus="Available"/>
+          <FormDialog id={this.props.id} action="withdraw" newStatus="Broken"/>
         </CardActions>
       </Card>
     );
