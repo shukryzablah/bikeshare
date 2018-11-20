@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
-import Bikes from '../imports/api/bikes';
-import Patrons from '../imports/api/patrons';
-import History from '../imports/api/history';
+import '../imports/api/bikes';
+import '../imports/api/patrons';
+import '../imports/api/log';
 
 Meteor.startup(() => {
 
