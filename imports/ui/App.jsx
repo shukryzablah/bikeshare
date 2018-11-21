@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,7 +14,7 @@ const styles = () => ({
   },
 });
 
-class App extends React.Component {
+class App extends Component {
   state = {
     mobileOpen: false,
   };
@@ -26,12 +27,14 @@ class App extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBarContainer handleDrawerToggle={this.handleDrawerToggle}/>
-        <ResponsiveDrawer mobileOpen={this.state.mobileOpen} handleDrawerToggle={this.handleDrawerToggle}/>
-        <MainView />
-      </div>
+      <Router>
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBarContainer handleDrawerToggle={this.handleDrawerToggle}/>
+          <ResponsiveDrawer mobileOpen={this.state.mobileOpen} handleDrawerToggle={this.handleDrawerToggle}/>
+          <MainView />
+        </div>
+      </Router>
     );
   }
 }

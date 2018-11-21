@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -19,19 +21,19 @@ const DrawerContents = (props) => {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        <ListItem button>
+        <ListItem button component={Link} to="/bikes">
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
           <ListItemText primary={"Bikes"} />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/log">
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
           <ListItemText primary={"Log"} />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to="/rules">
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>

@@ -1,9 +1,12 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import { renderRoutes } from '../startup/client/routes';
-
+import BikePage from './BikePage';
+import LogPage from './LogPage';
+import RulesPage from './RulesPage';
+import NotFoundPage from './NotFoundPage';
 
 const drawerWidth = 240;
 
@@ -24,7 +27,13 @@ const MainView = (props) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
-      {renderRoutes()}
+      <Switch>
+        <Route exact path="/" component={BikePage} />
+        <Route exact path="/bikes" component={BikePage} />
+        <Route exact path="/log" component={LogPage} />
+        <Route exact path="/rules" component={RulesPage} />
+        <Route component={NotFoundPage}/>
+      </Switch>
     </main>
   );
 };
