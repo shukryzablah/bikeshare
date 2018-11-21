@@ -1,9 +1,9 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 
-import DrawerContents from './DrawerContents';
+import MobileDrawer from './MobileDrawer';
+import NonMobileDrawer from './NonMobileDrawer';
 
 const drawerWidth = 240;
 
@@ -21,37 +21,15 @@ const styles = theme => ({
 
 
 const ResponsiveDrawer = (props) => {
-  const { classes, handleDrawerToggle, mobileOpen } = props
+  const { classes, theme, handleDrawerToggle, mobileOpen } = props
 
   return (
     <nav className={classes.drawer}>
-      <Hidden smUp implementation="css">
-        <Drawer
-          container={this.props.container}
-          variant="temporary"
-          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-        >
-          <DrawerContents/>
-        </Drawer>
-      </Hidden>
       <Hidden xsDown implementation="css">
-        <Drawer
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          variant="permanent"
-          open
-        >
-          <DrawerContents/>
-        </Drawer>
+        <NonMobileDrawer />
+      </Hidden>
+      <Hidden smUp implementation="css">
+        <MobileDrawer handleDrawerToggle={handleDrawerToggle} mobileOpen={mobileOpen}/>
       </Hidden>
     </nav>
   );

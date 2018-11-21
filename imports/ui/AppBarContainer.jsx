@@ -28,23 +28,21 @@ const AppBarContainer = (props) => {
   const { classes, handleDrawerToggle } = props
 
   return (
-    <div>
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="Open drawer"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" noWrap>
-            AC Bikeshare
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="Open drawer"
+          onClick={handleDrawerToggle}
+          className={classes.menuButton}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" color="inherit" noWrap>
+          AC Bikeshare
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
