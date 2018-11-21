@@ -7,7 +7,7 @@ import AppBarContainer from './AppBarContainer';
 import ResponsiveDrawer from './ResponsiveDrawer';
 import MainView from './MainView';
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     display: 'flex',
   },
@@ -23,7 +23,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
@@ -36,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(App);
+export default withStyles(styles)(App);

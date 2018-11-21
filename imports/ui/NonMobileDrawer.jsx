@@ -6,7 +6,7 @@ import DrawerContents from './DrawerContents';
 
 const drawerWidth = 240;
 
-const styles = theme => ({
+const styles = () => ({
   drawerPaper: {
     width: drawerWidth,
   },
@@ -28,4 +28,4 @@ const NonMobileDrawer = (props) => {
   );
 };
 
-export default withStyles(styles, { withTheme: true} )(NonMobileDrawer);
+export default withStyles(styles)(NonMobileDrawer);

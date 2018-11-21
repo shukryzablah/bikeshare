@@ -21,7 +21,7 @@ const styles = theme => ({
 
 
 const ResponsiveDrawer = (props) => {
-  const { classes, theme, handleDrawerToggle, mobileOpen } = props
+  const { classes, handleDrawerToggle, mobileOpen } = props
 
   return (
     <nav className={classes.drawer}>

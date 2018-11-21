@@ -19,7 +19,7 @@ const styles = theme => ({
 });
 
 const MainView = (props) => {
-  const { classes, theme } = props
+  const { classes } = props
 
   return (
     <main className={classes.content}>
@@ -29,4 +29,4 @@ const MainView = (props) => {
   );
 };
 
-export default withStyles(styles, { withTheme: true })(MainView);
+export default withStyles(styles)(MainView);
