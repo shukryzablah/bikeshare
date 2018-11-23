@@ -2,10 +2,10 @@ import React from 'react';
 
 import Paper from '@material-ui/core/Paper';
 
-const BikeGrid = () => {
+const BikeGrid = (props) => {
   return (
     <Paper>
-      Main grid
+      {console.log(props.bikes)}
     </Paper>
   );
 };
