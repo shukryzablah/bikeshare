@@ -7,7 +7,9 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
+import HistoryIcon from '@material-ui/icons/History';
+import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 
 const styles = theme => ({
   toolbar: theme.mixins.toolbar,
@@ -23,19 +25,19 @@ const DrawerContents = (props) => {
       <List>
         <ListItem button component={Link} to="/bikes">
           <ListItemIcon>
-            <MailIcon />
+            <DirectionsBikeIcon />
           </ListItemIcon>
           <ListItemText primary={"Bikes"} />
         </ListItem>
         <ListItem button component={Link} to="/log">
           <ListItemIcon>
-            <MailIcon />
+            <HistoryIcon />
           </ListItemIcon>
           <ListItemText primary={"Log"} />
         </ListItem>
         <ListItem button component={Link} to="/rules">
           <ListItemIcon>
-            <MailIcon />
+            <LocalLibraryIcon />
           </ListItemIcon>
           <ListItemText primary={"Rules"} />
         </ListItem>

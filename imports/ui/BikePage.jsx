@@ -1,9 +1,15 @@
 import React from 'react';
 
-const BikePage = () => {
+import { withStyles } from '@material-ui/core/styles';
+
+import CounterDisplay from './CounterDisplay';
+import BikeGrid from './BikeGrid';
+
+const BikePage = (props) => {
   return (
     <div>
-      This is the bike page
+      <CounterDisplay count={4} numVariant="h1" textVariant="h4" />
+      <BikeGrid />
     </div>
   );
 };
